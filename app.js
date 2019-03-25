@@ -1,15 +1,3 @@
-class ImageGetter {
-  images = ['1.jpeg', '2.jpeg', '3.jpeg'];
-  currentImageIndex = 0;
-
-  next() {
-    this.currentImageIndex = this.currentImageIndex % 3;
-    return this.images[this.currentImageIndex++];
-  }
-}
-
-const image = new ImageGetter();
-
 function imageAdder(observer) {
   const div = document.createElement('div');
   const img = document.createElement('img');
@@ -30,7 +18,7 @@ const observer = new IntersectionObserver(entries => {
     if (entry.isIntersecting) {
       entry.target.classList.add('in-view');
       const img = entry.target.querySelector('img');
-      img.src = image.next();
+      img.src = 'https://picsum.photos/318/180/?random';
       imageAdder(observer);
     } else {
       entry.target.classList.remove('in-view');
