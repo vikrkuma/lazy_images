@@ -1,0 +1,22 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(318px, 1fr));
+}
+
+.img-placeholder {
+  transform: translateY(-10%);
+  transition: 600ms transform cubic-bezier(0.075, 0.82, 0.165, 1), 600ms opacity cubic-bezier(0.25, 0.46, 0.45, 0.94) 500ms;
+  opacity: 0.1;
+}
+
+.img-placeholder.in-view {
+  transform: translateY(0%);
+  opacity: 1;
+}
